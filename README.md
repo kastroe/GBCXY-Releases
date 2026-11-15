@@ -26,6 +26,12 @@ Optional: A NAS or network server for loading games over NFS
 
 No commercial game ROMs are included.
 
+## 📸 Screenshots
+
+### GBCXY Game Library — Running on PS5
+
+![GBCXY Game Library](GBCXY-Library-Screenshot.jpg)
+
 ✨ Features
 
 🎮 Redesigned Game Library
