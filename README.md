@@ -1,30 +1,31 @@
-🎮 GBCXY — Game Boy & Game Boy Color Emulator for PS5
+# 🎮 GBCXY — Game Boy & Game Boy Color Emulator for PS5
 
-GBCXY v2.0.1 — Kastroe Edition
+### GBCXY v2.0.2 — Kastroe Edition
 
-An optimised Game Boy and Game Boy Color emulator for homebrew-enabled PlayStation 5 consoles.
+**An optimised Game Boy and Game Boy Color emulator for homebrew-enabled PlayStation 5 consoles.**
 
-Originally developed by YAHBALLON, GBCXY has been enhanced with a redesigned game library, NAS/NFS support improvements, integrated cover artwork scraping, persistent favourites, performance optimisations and a completely redesigned PS5 home-screen icon.
+Originally developed by **YAHBALLON**, GBCXY has been enhanced with a redesigned game library, improved NAS/NFS support, integrated cover artwork scraping, persistent Favourites, performance optimisations and a completely redesigned PS5 home-screen icon.
 
-This repository hosts the public releases and downloads of GBCXY — Kastroe Edition.
+*This repository hosts the official public releases and downloads of GBCXY — Kastroe Edition.*
 
-📥 Download GBCXY
+---
 
-Download the latest stable release
+## 📥 Download GBCXY
 
-Download the installation ZIP from the release's Assets section.
+### [⬇️ Download the Latest Stable Release](https://github.com/kastroe/GBCXY-Releases/releases/latest)
 
-Requirements:
+Download the **PS5 installation ZIP** from the release's **Assets** section.
 
-A PlayStation 5 capable of running compatible homebrew applications
+### System Requirements
 
-A supported PS5 homebrew environment
+- **Console:** PlayStation 5 capable of running compatible homebrew applications.
+- **Environment:** A supported PS5 homebrew environment.
+- **Games:** Game Boy (`.gb`) and Game Boy Color (`.gbc`) ROM files.
+- **Optional:** A NAS or network server for loading games over NFS.
 
-Game Boy (.gb) or Game Boy Color (.gbc) ROM files
+**Important:** No commercial game ROMs are included.
 
-Optional: A NAS or network server for loading games over NFS
-
-No commercial game ROMs are included.
+---
 
 ## 📸 Screenshots
 
@@ -32,151 +33,123 @@ No commercial game ROMs are included.
 
 ![GBCXY Game Library](GBCXY-Library-Screenshot.jpg)
 
-✨ Features
+*Actual GBCXY interface running on PlayStation 5, displaying Game Boy, Game Boy Color and Favourites collections with cover artwork.*
 
-🎮 Redesigned Game Library
+---
 
-GBCXY features a console-friendly interface with three dedicated game rows:
+## ✨ Features
 
-Library
+### 🎮 Redesigned Game Library
 
-Description
+GBCXY features a **console-friendly interface** with three dedicated game rows:
 
-GAME BOY
+| Library | Description |
+|---|---|
+| **GAME BOY** | Your original Game Boy collection |
+| **GAME BOY COLOR** | Your Game Boy Color collection |
+| **FAVOURITES** | Quick access to your favourite games |
 
-Your original Game Boy collection
+**Additional improvements include:**
 
-GAME BOY COLOR
+- Larger game cover artwork.
+- **Small, Medium and Large** cover-size options.
+- Smooth horizontal game browsing.
+- Clear game titles and selection highlighting.
+- Improved spacing and library presentation.
+- Faster library startup through caching.
 
-Your Game Boy Color collection
+### 🌐 NAS / NFS Network Support
 
-FAVOURITES
-
-Quick access to games you've marked as favourites
-
-Additional improvements include:
-
-Larger game cover artwork
-
-Small, Medium and Large cover-size options
-
-Smooth horizontal browsing
-
-Clear game titles and selection highlighting
-
-Improved spacing and library presentation
-
-Faster library startup through caching
-
-🌐 NAS / NFS Network Support
-
-GBCXY supports loading games from compatible NFS network shares.
+GBCXY supports loading games directly from **compatible NFS network shares**.
 
 This is particularly useful for large ROM collections, allowing you to keep your games on a NAS rather than transferring every ROM onto your PS5.
 
-Example NFS locations:
+**Example NFS locations:**
 
+```text
 nfs://192.168.1.100/volume2/Roms/roms/gb
 nfs://192.168.1.100/volume2/Roms/roms/gbc
+```
 
-These are examples only. Replace the IP address and paths with your own server configuration.
+*These are examples only. Replace the IP address and paths with your own server configuration.*
 
-For NAS users:
+**Setting up your NAS:**
 
-Enable NFS sharing on your NAS or network server.
+1. Enable **NFS sharing** on your NAS or network server.
+2. Create or select folders containing your GB and GBC games.
+3. Grant your PS5 permission to access the relevant NFS exports.
+4. Enter the appropriate NFS locations in GBCXY's configuration.
+5. Refresh or rescan your game library.
 
-Create or select folders containing your GB and GBC games.
+**Note:** Your NAS must be reachable from the PS5 over your local network. NFS permissions and export paths depend on your NAS model and configuration.
 
-Grant your PS5 permission to access the relevant exports.
+### 🖼️ Automatic Cover Artwork
 
-Enter the appropriate NFS locations in GBCXY's configuration.
+GBCXY includes integrated artwork functionality to make your game library look more like a modern console frontend.
 
-Refresh or rescan the library.
+**Artwork features:**
 
-Your NAS must be reachable from the PS5 over the local network. NFS permissions and export paths depend on your NAS model and configuration.
+- Automatic game cover matching.
+- Downloading missing cover artwork.
+- **Scrape Missing Artwork** for the entire library.
+- Manual cover refresh using **R2**.
+- Local artwork caching for faster browsing.
+- Options for automatic cover downloading.
 
-🖼️ Cover Artwork
+*Not every ROM will have matching artwork available. Results depend on ROM filenames and available artwork sources.*
 
-GBCXY includes artwork functionality to make your game library look more like a modern console frontend.
+### ⭐ Persistent Favourites
 
-Features include:
+Create a personalised collection of frequently played games.
 
-Automatic game cover matching
+- Press **Triangle** on a selected game to add or remove it from Favourites.
+- Combine **GB and GBC games** in the same Favourites row.
+- Favourites persist across application restarts.
+- Your selections remain available after library refreshes.
 
-Downloading missing cover artwork
+### ⚡ Performance & Stability Improvements
 
-Scrape Missing Artwork for the entire library
+This edition includes optimisations focused on large game libraries and network-based collections.
 
-Manual artwork refresh
+- Reduced unnecessary library file operations.
+- Improved startup caching.
+- More efficient artwork loading.
+- Additional texture and memory safeguards.
+- Improved handling of library refreshes.
+- Reduced unnecessary background processing.
+- **v2.0.2:** Fixed a crash when using the DualSense touchpad to return from gameplay to the GBCXY library.
 
-Local artwork caching
+---
 
-Controls for automatic cover downloading
+## 🛠️ Installation Guide
 
-Not every ROM will have a matching cover available. Artwork results can depend on ROM naming and available artwork sources.
+1. Visit the **[GBCXY Releases page](https://github.com/kastroe/GBCXY-Releases/releases)**.
+2. Open the **latest stable release**.
+3. Download the PS5 installation ZIP under **Assets**.
+4. Extract the archive if required by your installation method.
+5. Install the packaged application using your compatible PS5 homebrew environment.
+6. Launch **GBCXY** from the PS5 home screen.
 
-⭐ Favourites
+The application features the redesigned **neon cyan-and-purple GBCXY icon**.
 
-Create your own collection of frequently played games.
+**Note:** GBCXY is a homebrew application and requires a compatible PS5 homebrew environment.
 
-Press Triangle on a selected game to add or remove it from Favourites.
+---
 
-GB and GBC games can appear together in the Favourites row.
+## 📚 Adding Games
 
-Favourites are retained across application restarts and library refreshes.
+GBCXY supports both Game Boy and Game Boy Color game libraries.
 
-⚡ Performance Improvements
+| System | Supported Extension |
+|---|---|
+| **Nintendo Game Boy** | `.gb` |
+| **Nintendo Game Boy Color** | `.gbc` |
 
-This edition includes improvements focused on large game libraries and network-based collections.
+### Recommended Folder Structure
 
-Reduced unnecessary library file operations
+You can organise your games into separate directories:
 
-Improved startup caching
-
-More efficient artwork loading
-
-Additional texture and memory safeguards
-
-Improved handling of library refreshes
-
-Reduced unnecessary background processing
-
-🛠️ Installation
-
-Visit the Releases page.
-
-Open the latest release.
-
-Download the PS5 installation ZIP under Assets.
-
-Extract the archive as required by your preferred installation method.
-
-Install the packaged application using your compatible PS5 homebrew environment.
-
-Launch GBCXY from your PS5 home screen.
-
-The application will appear with the redesigned neon GBCXY icon.
-
-Note: GBCXY is a homebrew application. It is not intended for a standard retail PS5 without a compatible homebrew environment.
-
-📚 Adding Games
-
-GBCXY supports Game Boy and Game Boy Color game libraries.
-
-System
-
-File extension
-
-Game Boy
-
-.gb
-
-Game Boy Color
-
-.gbc
-
-You can organise games into separate directories, for example:
-
+```text
 Roms/
 ├── gb/
 │   ├── Game 1.gb
@@ -184,143 +157,154 @@ Roms/
 └── gbc/
     ├── Game 1.gbc
     └── Game 2.gbc
+```
 
-Configure the corresponding locations in GBCXY, then refresh the library.
+Configure the corresponding locations in GBCXY, then refresh the game library.
 
-For NFS collections, make sure the configured path points to the correct exported location and that the PS5 has permission to read it.
+**For NFS collections:** Ensure your configured location points to the correct exported directory and your PS5 has permission to read it.
 
-🎮 Controls
+---
 
-Button
+## 🎮 Controller Controls
 
-Function
+| Button | Function |
+|---|---|
+| **Directional controls** | Navigate games and menus |
+| **Cross (✕)** | Launch selected game |
+| **Triangle (△)** | Add or remove Favourites |
+| **R2** | Refresh selected game's cover artwork |
+| **Touchpad (during gameplay)** | Return to GBCXY's game library |
 
-Directional controls
+*Additional controls and customisation options are available through the application's menus and on-screen prompts.*
 
-Navigate games and menus
+---
 
-Triangle
+## ⚙️ Settings & Customisation
 
-Add/remove selected game from Favourites
+GBCXY provides several options for customising your experience.
 
-R2
+**🖼️ Cover Size**
 
-Manual artwork refresh where supported
+Choose between **Small, Medium and Large** artwork sizes.
 
-Additional controls and options are available through the application's on-screen menus and controller prompts.
+**🌐 Artwork Scraping**
 
-⚙️ Settings
+Download missing artwork manually or configure automatic downloading.
 
-GBCXY provides options for customising your game library, including:
+**📂 Game Directories**
 
-Cover size: Choose Small, Medium or Large artwork.
+Configure local or network-based game locations.
 
-Artwork scraping: Download missing artwork manually or configure automatic downloading.
+**🔄 Library Refresh**
 
-Game directories: Configure local or network-based game locations.
+Rescan configured game collections when ROMs are added or removed.
 
-Library refresh: Rescan configured collections when games are added or removed.
+---
 
-🧪 Testing and Compatibility
+## 🧪 Testing & Compatibility
 
-GBCXY — Kastroe Edition has been tested on actual PS5 hardware.
+**GBCXY — Kastroe Edition has been tested on actual PlayStation 5 hardware.**
 
 Testing has included:
 
-A combined GB/GBC library of approximately 1,979 games
-
-NFS ROM library access from an Asustor NAS
-
-Cover artwork scraping across a large library
-
-Game library navigation
-
-Persistent Favourites
-
-Adjustable game cover sizes
-
-Installation of compiled PS5 builds
-
-Verification of the redesigned PS5 home-screen icon
+- A combined GB/GBC library of approximately **1,979 games**.
+- NFS ROM library access from an **Asustor NAS**.
+- Cover artwork scraping across a large collection.
+- Game library navigation and scrolling.
+- Persistent Favourites.
+- Adjustable game cover sizes.
+- Installation of compiled PS5 builds.
+- Verification of the redesigned home-screen icon.
+- Gameplay testing with **The Legend of Zelda: Link's Awakening** for Game Boy.
+- Returning from gameplay to the library and launching another ROM after the **v2.0.2 stability fix**.
 
 The project has also passed GitHub Actions source regression tests and PS5 package compilation checks.
 
-Please note: Testing with a large library does not mean every individual game has been tested for compatibility. Some games, artwork matches and network configurations may behave differently.
+**Compatibility notice:** Testing with a large library does not mean every individual game has been tested. Game compatibility, artwork matching and network performance may vary.
 
-❓ Troubleshooting
+---
 
-My games aren't appearing
+## ❓ Troubleshooting
 
-Check that your ROM directory is correct, the files have supported extensions and the library has been refreshed.
+### My Games Aren't Appearing
 
-For NAS users, verify your NFS export path, permissions and network connectivity.
+Check that:
 
-Covers are missing
+- Your ROM directory is configured correctly.
+- Your games have supported file extensions.
+- The game library has been refreshed.
+- Your NFS share is accessible if loading from a NAS.
 
-Try the Scrape Missing Artwork option or manually refresh artwork.
+### Covers Are Missing
 
-Some ROM names may not match available artwork databases.
+Try **Scrape Missing Artwork** or manually refresh the selected game's cover.
 
-NFS isn't connecting
+Some ROM filenames may not match available artwork databases.
 
-Check the following:
+### NFS Isn't Connecting
 
-Your NAS has NFS enabled.
+Verify the following:
 
-The exported path is correct.
+- NFS sharing is enabled on your NAS.
+- The exported directory path is correct.
+- Your PS5's IP address has permission to access the share.
+- The NAS and PS5 can communicate over the local network.
+- The export provides the required read permissions.
 
-Your PS5's IP address is permitted to access the export.
+### A Game Doesn't Run Correctly
 
-The NAS and PS5 can communicate over the local network.
+Confirm that the ROM file is valid and try another known-working game.
 
-The export allows the required file access.
+Not all compatibility problems are necessarily caused by the GBCXY frontend.
 
-A game doesn't run correctly
+---
 
-Confirm the ROM file is valid and try another known-working game.
+## 📝 Reporting Bugs & Issues
 
-Not all compatibility issues are necessarily caused by the frontend.
+**Found a bug or encountered a problem?**
 
-📝 Reporting Issues
+Report it through the **[GitHub Issues page](https://github.com/kastroe/GBCXY-Releases/issues)**.
 
-Found a bug or encountered a problem?
+Please include:
 
-Use the GitHub Issues page and include:
+- **GBCXY version** being used.
+- **PS5 homebrew environment**.
+- Whether the ROM is loaded **locally or over NFS**.
+- A clear description of the problem.
+- Relevant error messages or screenshots.
 
-Your GBCXY version
+*Please do not upload copyrighted game ROMs when reporting issues.*
 
-Your PS5 homebrew environment
+---
 
-Whether the game is loaded locally or over NFS
+## 🙏 Credits & Acknowledgements
 
-A description of the problem
+**YAHBALLON** — Original GBCXY project and foundation.
 
-Any relevant error messages or screenshots
+**Kastroe** — Optimised frontend, game library improvements, NAS/NFS refinements, artwork management, Favourites, performance improvements and PS5 presentation.
 
-Please don't upload copyrighted game ROMs when reporting issues.
+**mGBA Contributors** — Game Boy and Game Boy Color emulation core.
 
-🙏 Credits
+**Original Upstream & Homebrew Contributors** — Supporting libraries, resources and development work.
 
-YAHBALLON — Original GBCXY project and foundation.
+*All applicable upstream licence and attribution requirements remain in effect.*
 
-Kastroe — Optimised frontend, library improvements, NAS/NFS refinements, artwork workflow, Favourites and PS5 presentation.
+---
 
-mGBA contributors — Game Boy and Game Boy Color emulation core.
+## ⚠️ Disclaimer
 
-Original upstream and homebrew contributors — Supporting libraries, resources and development work.
+**GBCXY is an unofficial PlayStation 5 homebrew application.**
 
-All applicable upstream licence and attribution requirements remain in effect.
-
-⚠️ Disclaimer
-
-GBCXY is an unofficial homebrew application.
-
-It is not affiliated with, endorsed by or sponsored by Sony Interactive Entertainment or Nintendo.
+It is not affiliated with, endorsed by or sponsored by **Sony Interactive Entertainment** or **Nintendo**.
 
 Game Boy, Game Boy Color and PlayStation are trademarks of their respective owners.
 
-No commercial game ROMs are distributed with this project. Users are responsible for ensuring they have the rights to any game files they use.
+**No commercial game ROMs are distributed with this project.** Users are responsible for ensuring they have the necessary rights to any game files they use.
 
-GBCXY — Kastroe Edition
+---
 
-Bringing classic Game Boy gaming to the PlayStation 5.
+### 🎮 GBCXY — Kastroe Edition
+
+*Bringing classic Game Boy gaming to the PlayStation 5.*
+
+**[📥 Download GBCXY](https://github.com/kastroe/GBCXY-Releases/releases/latest)**
