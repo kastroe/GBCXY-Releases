@@ -31,11 +31,14 @@ Download the **PS5 installation ZIP** from the release's **Assets** section.
 
 ### GBCXY Game Library — Running on PS5
 
-![GBCXY Game Library](GBCXY-Library-Screenshot.jpg)
+### Game Library
+![GBCXY Game Library](gbcxy-library.png)
 
-*Actual GBCXY interface running on PlayStation 5, displaying Game Boy, Game Boy Color and Favourites collections with cover artwork.*
+### Settings
+![GBCXY Settings](gbcxy-settings.png)
 
----
+### Game Boy Gameplay
+![Game Boy Gameplay](gb-tetris.png)
 
 ## ✨ Features
 
