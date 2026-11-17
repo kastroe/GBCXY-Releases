@@ -1,62 +1,99 @@
 <div align="center">
 
-# GBCXY
+<img src="neon_gbcxy_retro_console_icon.png" alt="GBCXY icon" width="150">
 
+# GBCXY
 ### 8-Bit Colors. Next-Gen CoverFlow.
 
-**v2.1.0 by Kastroe Ã‚Â· PPSA99210**
-Originally developed by YAHBALLON
+**Game Boy · Game Boy Color · Game Boy Advance — on PlayStation 5**
 
-[![GitHub releases](https://img.shields.io/github/v/release/kastroe/PS5GBCX?style=flat-square)](https://github.com/kastroe/GBCXY-Releases/releases)
+[![Latest release](https://img.shields.io/github/v/release/kastroe/GBCXY-Releases?style=for-the-badge&label=Latest%20release&color=9b59b6)](https://github.com/kastroe/GBCXY-Releases/releases/latest)
+[![Platform](https://img.shields.io/badge/Platform-PS5-1765cc?style=for-the-badge)](https://github.com/kastroe/GBCXY-Releases/releases/tag/v2.1.0)
+[![Source](https://img.shields.io/badge/Source-Available-228b22?style=for-the-badge)](https://github.com/kastroe/GBCXY-Releases/releases/tag/v2.1.0)
+
+**v2.1.0 by Kastroe · Title ID: `PPSA99210`**  
+*Originally developed by YAHBALLON*
+
+**[⬇ Download v2.1.0](https://github.com/kastroe/GBCXY-Releases/releases/tag/v2.1.0)** · **[📦 Corresponding source](https://github.com/kastroe/GBCXY-Releases/releases/download/v2.1.0/GBCXY-v2.1.0-source-380035e.zip)**
 
 </div>
 
-**GBCXY** is a PlayStation 5 homebrew emulator for **Game Boy, Game Boy Color and Game Boy Advance**, powered by the mGBA 0.10.5 GB/GBC/GBA core and a 3D Vulkan CoverFlow frontend. It builds on the same modern frontend foundation as GBAXY, with five original themes and its own animated loading sequence.
+---
 
-> **Compatibility:** the repository remains `PS5GBCX`, Title ID remains **`PPSA99210`**, and existing games, settings, cached box art and saves remain in **`/data/PS5GBC/`**. This is an in-place upgrade, not a new app title.
+## ✨ A classic handheld collection, reimagined for PS5
 
-## Highlights
+**GBCXY** is a homebrew emulator for **Game Boy (GB), Game Boy Color (GBC), and Game Boy Advance (GBA)** on homebrew-enabled PlayStation 5 consoles. Powered by **mGBA 0.10.5**, it combines native emulation with an animated, Vulkan-based **3D CoverFlow** library, artwork caching, customizable controls, and NAS/NFS game loading.
 
-| Feature | Description |
+Version **2.1.0** adds GBA support and working **Super Game Boy border-inclusive output**, alongside fixes for cartridge save compatibility. The exact released build was tested on a PS5 before publication.
+
+> [!IMPORTANT]
+> **In-place upgrade:** GBCXY keeps Title ID `PPSA99210` and existing runtime data under `/data/PS5GBC/`. Do **not** delete that folder when updating; it holds your saves, settings, game library data, and cached artwork.
+
+## 📸 Screenshots
+
+<div align="center">
+
+### 3D CoverFlow game library
+<img src="gbcxy-library.png" alt="GBCXY 3D CoverFlow library screenshot" width="850">
+
+*Browse your collection with cartridge-style artwork, reflections, and favourites.*
+
+### Settings and personalization
+<img src="gbcxy-settings.png" alt="GBCXY settings screenshot" width="850">
+
+*Choose your display preferences, themes, controls, and library options.*
+
+### Game Boy gameplay
+<img src="gb-tetris.png" alt="Tetris running in GBCXY on PS5" width="850">
+
+*Classic Game Boy gameplay on PS5.*
+
+</div>
+
+> These are the original screenshots already hosted in this repository. Their imagery may depict an earlier build; v2.1.0 additionally supports GBA and Super Game Boy borders.
+
+## 🚀 What's inside v2.1.0?
+
+| Feature | What it offers |
 | --- | --- |
-| **3D CoverFlow** | Animated glass cartridge cases, neon edges, cover reflections and wraparound browsing |
-| **Artwork lookup/cache** | GB and GBC use their **separate** Libretro Named_Boxarts libraries, with region/name fallbacks and a local disk cache |
-| **Five new themes** | Chromatic Shift, Pocket Forest, Berry Soda, Polar LCD and Retro Amber |
-| **Chromatic Pocket** | Original animated 8-bit boot: rotating color-pixel mosaic, LCD scanlines, cartridge emblem and genuine ROM scan counts |
-| **Native GB/GBC/GBA emulation** | mGBA 0.10.5 with GB/GBC/GBA cores enabled; preserves ROM scanning, audio, saves and controller mappings |
-| **SGB enhanced borders** | Supports GB/GBC `160x144`, Super Game Boy border-inclusive `256x224`, and GBA `240x160` output paths |
-| **Flexible scaling** | Stretch to full screen, original GB/GBC aspect ratio or integer scaling |
-| **Three-row library** | Independent Game Boy, Game Boy Color and Favourites rows with persistent favourites |
-| **Cover Size** | Small, Medium and Large display sizes, persisted in the existing settings |
-| **Safe PS5 exit** | In the library, Circle opens the close confirmation, Cross confirms, Circle cancels. Shutdown uses `sceSystemServiceLoadExec("exit", nullptr)` rather than unsupported libc `exit(0)`. |
+| 🎮 **GB · GBC · GBA** | mGBA-powered support for all three handheld systems |
+| 🖼️ **3D CoverFlow** | Animated glass-style cartridge cases, reflections, neon edges, and wraparound navigation |
+| 🌈 **Five themes** | Chromatic Shift, Pocket Forest, Berry Soda, Polar LCD, and Retro Amber |
+| ✨ **Chromatic Pocket intro** | Animated 8-bit loading presentation with a cartridge emblem and real scan counts |
+| 🧩 **Super Game Boy borders** | Border-inclusive **256×224** video support for compatible games |
+| 📐 **Display scaling** | Full-screen stretch, original aspect ratio, or integer scaling |
+| 🌐 **NAS/NFS libraries** | Load games from configured network shares without copying the collection to PS5 storage |
+| 💾 **Saves and states** | Cartridge saves, supported RTC data, save states, and resume features |
+| ⭐ **Art and favourites** | Artwork lookup/cache, adjustable cover sizes, persistent favourites, and search |
+| 🎛️ **Custom controls** | Global/per-game mappings, fast-forward, and save/load shortcuts |
 
-### Choose your theme
+**Video geometry:** GB/GBC `160×144` · SGB `256×224` (including borders) · GBA `240×160`.
 
-- **Chromatic Shift** Ã¢â‚¬â€ multicolor turquoise and purple; default
-- **Pocket Forest** Ã¢â‚¬â€ LCD greens and spring-leaf highlights
-- **Berry Soda** Ã¢â‚¬â€ pink, raspberry and sunset orange
-- **Polar LCD** Ã¢â‚¬â€ icy blue and white glass
-- **Retro Amber** Ã¢â‚¬â€ dark gold inspired by vintage handheld screens
+### 🎨 Pick your theme
 
-Select a theme under **Settings Ã¢â€ â€™ Appearance Ã¢â€ â€™ Theme**. The selection is stored in the existing global configuration.
+**Chromatic Shift** — turquoise and purple · **Pocket Forest** — retro LCD greens · **Berry Soda** — pink and sunset orange · **Polar LCD** — cool blue and white · **Retro Amber** — vintage golden tones.
 
-## Box art sources
+Change your theme from **Settings → Appearance → Theme**. Preferences are saved in the existing configuration.
 
-GBCXY uses the existing local cover folder and cache first. For missing covers it looks up No-Intro names and common USA, Europe and Japan region variants in the correct system-specific directories:
+## 📥 Download and installation
 
-- **Game Boy (.gb):** [Libretro GB Named_Boxarts](https://thumbnails.libretro.com/Nintendo%20-%20Game%20Boy/Named_Boxarts/)
-- **Game Boy Color (.gbc):** [Libretro GBC Named_Boxarts](https://thumbnails.libretro.com/Nintendo%20-%20Game%20Boy%20Color/Named_Boxarts/)
-- **Game Boy Advance (.gba):** GBA recognition is supported; artwork remains on-demand and policy-controlled without changing the existing GB/GBC artwork providers.
+**[Get GBCXY v2.1.0 on GitHub Releases](https://github.com/kastroe/GBCXY-Releases/releases/tag/v2.1.0)**
 
-Game Boy artwork will not be incorrectly selected from the Game Boy Color library (or the reverse). Portrait art stays portrait, landscape artwork keeps its complete source image, and reflections follow the same geometry. Cover downloads happen on demand and are cached for the next boot.
+1. Download **[`GBCXY-v2.1.0-by-Kastroe-FINAL-RC.zip`](https://github.com/kastroe/GBCXY-Releases/releases/download/v2.1.0/GBCXY-v2.1.0-by-Kastroe-FINAL-RC.zip)** — this is the **installable PS5 package**, despite its build-stage filename.
+2. Extract the **complete `PPSA99210` folder**, retaining `eboot.bin`, `sce_sys`, `sce_module`, and the packaged helper.
+3. Copy the folder to a supported homebrew location on your PS5, commonly `/data/homebrew/PPSA99210/`, and launch GBCXY.
 
-## Installation / updating
+> [!NOTE]
+> The **source-code ZIP is not an installable PS5 package**. Use the production ZIP linked above. This release does **not** contain commercial ROMs or BIOS images.
 
-1. The production release asset is **`GBCXY-v2.1.0-by-Kastroe-FINAL-RC.zip`** with the complete `PPSA99210` payload and required notices. The exact FINAL-RC production artifact was tested on PS5 hardware before publication. Its SHA-256 is 10eccb33fbf171192f9a2ed7daaa9690905b4debce86c4d429df1f86809901fd. A GitHub source-code ZIP is **not** an installable PS5 build.
-2. Extract the **complete `PPSA99210` folder**, retaining `eboot.bin`, `sce_sys`, `sce_module` and the packaged helper.
-3. Copy it to a supported PS5 homebrew install folder, commonly `/data/homebrew/PPSA99210/`, and start **GBCXY** from your jailbroken PS5.
+**Verified production SHA-256:**
+```text
+10eccb33fbf171192f9a2ed7daaa9690905b4debce86c4d429df1f86809901fd
+```
 
-### Game folders and saved data
+The release also provides the corresponding-source archive and `SHA256SUMS.txt`.
+
+### 📂 Game and save locations
 
 ```text
 /data/PS5GBC/games/
@@ -68,119 +105,105 @@ Game Boy artwork will not be incorrectly selected from the Game Boy Color librar
 /data/PS5GBC/logs/
 ```
 
-You can also scan USB game directories such as `/mnt/usb0/homebrew/PS5GBC/games/` and configured NFS shares. Use your own legally acquired GB/GBC/GBA game files; the repository includes **no ROMs**.
+You can also use USB directories such as `/mnt/usb0/homebrew/PS5GBC/games/` and configured NFS libraries. Use your own legally acquired GB/GBC/GBA games.
 
-## Controller controls
+## 🎮 Controls
 
-### Library
+### In the library
 
 | Input | Action |
 | --- | --- |
-| D-pad Left/Right | Browse the current row |
-| L1/R1 | Jump through the row |
+| D-pad Left / Right | Browse within the current row |
+| L1 / R1 | Jump through the row |
 | Up | Cycle the library collection |
 | Down | Open library search |
-| Triangle | Toggle the selected game's favourite state |
+| Triangle | Toggle favourite |
 | Square | Open settings |
-| R2 | Refresh the selected game's artwork |
-| Cross/Options | Launch the selected game |
-| Circle | Open the exit confirmation |
+| R2 | Refresh selected artwork |
+| Cross / Options | Launch game |
+| Circle | Show exit confirmation |
 
 ### In-game
 
-Cross and Circle map to A and B. The D-pad maps to directions, Options maps to Start,
-Create maps to Select, and holding L1+R1+Touchpad for two seconds returns to the shelf.
-Holding L2 enables fast forward. L3+R3+Up saves a state; L3+R3+Down loads one. Button mappings and shortcuts
-can be changed globally or per game.
+| Input | Action |
+| --- | --- |
+| Cross / Circle | A / B |
+| D-pad | Directional input |
+| Options / Create | Start / Select |
+| Hold L2 | Fast-forward |
+| L3 + R3 + Up | Save state |
+| L3 + R3 + Down | Load state |
+| Hold L1 + R1 + Touchpad (2 seconds) | Return to library |
 
-## Saves, states and resume
+Mappings and shortcuts can be changed globally or per game. From the library, **Circle** opens the exit confirmation; **Cross** confirms and **Circle** cancels.
 
-Battery-backed cartridge saves, RTC data where supported, and save states are stored
-under `/data/PS5GBC/saves/` and `/data/PS5GBC/states/`. Save-state slots can be
-written and loaded from the in-game shortcuts above, and the frontend preserves the
-selected game and resume state across a normal relaunch. Existing save data remains
-in place when updating the app.
+## 🌐 NAS/NFS libraries and artwork
 
-## NFS game libraries
-
-NFS support is configurable and does not require a repository-local server address.
-Open **Settings Ã¢â€ â€™ Network Ã¢â€ â€™ NFS URL** and enter a share such as:
+Open **Settings → Network → NFS URL** and enter a configured share, for example:
 
 ```text
 nfs://your-server/export/gbcxy
 ```
 
-Alternatively, place one configured share per line in `/data/PS5GBC/nfs.txt`.
-Use a hostname or the address of your own server; do not commit private NAS addresses
-or credentials. The library cache preserves discovered games between launches, while
-manual rescan and the configured refresh policy remain available.
+Alternatively, put one share per line in `/data/PS5GBC/nfs.txt`. The library caches discovered games between launches and supports refresh/rescan workflows. Do not put private server addresses or credentials in public repository files.
 
-## Artwork and favourites
+For artwork, GBCXY prefers local covers and the persistent cache, then uses system-specific lookup:
 
-GBCXY checks local artwork and its persistent cache before using the system-specific
-Libretro Named_Boxarts sources listed above. **Settings Ã¢â€ â€™ Artwork Ã¢â€ â€™ Scrape Missing
-Artwork** performs a manual full-library scrape; automatic cover downloads remain off
-by default. Downloaded, validated artwork is stored in the runtime data directory,
-not in this repository. Existing cached covers are never required for a source build.
+- **Game Boy:** [Libretro GB Named_Boxarts](https://thumbnails.libretro.com/Nintendo%20-%20Game%20Boy/Named_Boxarts/)
+- **Game Boy Color:** [Libretro GBC Named_Boxarts](https://thumbnails.libretro.com/Nintendo%20-%20Game%20Boy%20Color/Named_Boxarts/)
+- **Game Boy Advance:** recognized and handled by the existing on-demand artwork policy
 
-## Source layout and builds
+GB and GBC artwork sources remain separate to avoid mismatched covers. Missing artwork can be requested manually from **Settings → Artwork → Scrape Missing Artwork**; automatic cover downloads are off by default. Cached images are stored locally.
 
-The the native build workflow workflow performs automated source/box-art/controller regression tests and assembles a native signed PS5 package from source. The corresponding-source archive and complete notices are attached to the [v2.1.0 release](https://github.com/kastroe/GBCXY-Releases/releases/tag/v2.1.0); source commit: `380035e314bd7e30f793883a24b23e1b5db996f2`. Package hashes are published with the final artifact; version metadata is maintained in `app.json` and `gbc/src/gbcxy_build_version.h`.
+## 💾 Saves and backwards compatibility
+
+Battery saves and supported RTC data live under `/data/PS5GBC/saves/`; save states live under `/data/PS5GBC/states/`. Save-state shortcuts and resume features remain available. Existing data is retained through an in-place upgrade.
+
+**v2.1.0 fixes** include valid Super Game Boy `256×224` output being rejected at launch and compatibility with an existing **64 KiB Mario Kart: Super Circuit** cartridge save. The final production candidate passed host tests and user PS5 hardware testing.
+
+## 🛠️ Source code and building
+
+The **[v2.1.0 release](https://github.com/kastroe/GBCXY-Releases/releases/tag/v2.1.0)** includes a **[corresponding-source archive](https://github.com/kastroe/GBCXY-Releases/releases/download/v2.1.0/GBCXY-v2.1.0-source-380035e.zip)** at source commit:
 
 ```text
-gbc/src/                   GB/GBC/GBA core wrapper, emulator and Chromatic Pocket animation
-gbc/third_party/mgba/      Original open-source mGBA source
-gbc/tools/                 Native PS5 build scripts and regression checks
-ps5/frontend/              Game library, cover worker, settings, native Vulkan bridge
-ps5/porpoise_original/     Licensed Porpoise 3D UI code
-ps5/frontend/assets/       GBCXY icon and embedded UI assets
-tests/                     GBCXY visual, cover-provider and exit regression tests
-.github/workflows/         Automated signed build and release
+380035e314bd7e30f793883a24b23e1b5db996f2
 ```
 
-GBCXY builds require the PS5 payload toolchain, native Vulkan dependencies and compatible Linux SDK tools. Host-only builds cannot produce an installable PS5 binary.
+**Source tree overview:**
 
-### Windows development with WSL
-
-The Windows checkout is the authoritative source tree. Use WSL for Linux-based
-host checks and PS5 cross-build tools:
-
-```bash
-cd /mnt/c/path/to/PS5GBCX
-python3 gbc/tools/test.py
+```text
+gbc/src/                 Core wrapper, emulator and startup animation
+gbc/third_party/mgba/    Vendored mGBA sources
+gbc/tools/               PS5 build scripts and regression tests
+ps5/frontend/            Library, artwork, settings and Vulkan integration
+ps5/porpoise_original/   Porpoise-derived frontend sources
+ps5/frontend/assets/     UI assets
+tests/                   Host-side checks
+.github/workflows/       Build automation definitions
 ```
 
-For a native PS5 build, prepare the pinned dependencies described in
-[`BUILDING.md`](BUILDING.md), then provide the dependency locations and run:
+Build documentation (`BUILDING.md`, `INSTALL.md`, `CONTROLS.md`, and `TESTING.md`) is available **inside the corresponding-source archive**.
 
-```bash
-export PS5GBC_DEPS=/path/to/prepared/ps5-build
-export PS5_PAYLOAD_SDK=/path/to/ps5-payload-sdk
-export LIBNFS_PREFIX=/path/to/libnfs-install
-export LIBZ_PREFIX=/path/to/pacbrew/sysroot/user/homebrew
-bash gbc/tools/build.sh
-```
+Builds require a Linux environment such as WSL, the relevant PS5 payload toolchain/SDK, Clang/LLVM 18, CMake/Ninja, Vulkan dependencies, libnfs, and prepared PacBrew libraries. A host-only test build is **not** an installable PS5 package. Refer to the archive's instructions for pinned dependencies and build commands.
 
-The scripts use Clang/LLVM 18, LLD, CMake/Ninja, Python, PS5/Vulkan SDK
-components, libnfs and PacBrew curl/OpenSSL/zlib dependencies. SDKs and generated
-dependency trees are intentionally not stored in Git. Native Windows builds are
-not supported by these entry points.
+## ❤️ Credits and licences
 
-See [`BUILDING.md`](BUILDING.md), [`INSTALL.md`](INSTALL.md), [`CONTROLS.md`](CONTROLS.md)
-and [`TESTING.md`](TESTING.md) for operational details and known PS5 validation limits.
+**GBCXY v2.1.0 by Kastroe · Originally developed by YAHBALLON.**
 
-## Credits and licensing
+Emulation is powered by **[mGBA](https://github.com/mgba-emu/mgba)** (MPL-2.0). Frontend development incorporates **[Porpoise](https://github.com/elripalda/Porpoise-Dolphin-Emulator-for-PS5)** and other attributed open-source PS5 work. Additional components include libnfs, Vulkan-related tooling, font libraries, stb libraries, and other upstream dependencies under their respective licences.
 
-**GBCXY v2.1.0 by Kastroe. Originally developed by YAHBALLON.** GB/GBC/GBA emulation is provided by [mGBA](https://github.com/mgba-emu/mgba)
-(MPL-2.0), with frontend code adapted from [Porpoise](https://github.com/elripalda/Porpoise-Dolphin-Emulator-for-PS5)
-and other open-source PS5 development projects. The repository also contains vendored
-dependencies including Vulkan tooling, libnfs, curl/OpenSSL/zlib components, fonts,
-stb libraries and other upstream code with their own licenses.
+Project portions are distributed under **GPL-3.0-or-later** where applicable. The corresponding-source archive contains `LICENSE`, `COPYING.GPLv3`, `THIRD_PARTY_NOTICES.md`, `gbc/licenses/`, and other bundled notices. See those files before redistribution. Project-specific artwork and logos retain their stated permissions.
 
-The project is distributed under GPL-3.0-or-later where applicable. See
-[`LICENSE`](LICENSE), [`COPYING.GPLv3`](COPYING.GPLv3), [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md),
-the `gbc/licenses/` directory and bundled third-party license files before
-redistributing modified or packaged builds. The GBCXY logo and project-specific
-assets remain subject to their stated provenance and permissions.
+GBCXY is an independent community homebrew project and is **not affiliated with Sony or Nintendo**. No commercial ROMs, copyrighted BIOS images, or pirated games are distributed.
 
-There is no dedicated in-app About screen. Credits are shown in the loading frame and boot/report header; this README and the notices are the authoritative attribution locations. This independent community homebrew project is not affiliated with Sony or Nintendo. It does not distribute commercial ROMs, copyrighted BIOS files or pirated games. The exact FINAL-RC production artifact was tested on PS5 hardware before publication.
+---
+
+<div align="center">
+
+### Ready to revisit your handheld favourites?
+
+**[⬇ Download GBCXY v2.1.0](https://github.com/kastroe/GBCXY-Releases/releases/tag/v2.1.0)**
+
+*Made for the PS5 homebrew community · Developed by Kastroe · Original project by YAHBALLON*
+
+</div>
