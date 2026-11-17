@@ -7,8 +7,7 @@
 **v2.1.0 by Kastroe Ã‚Â· PPSA99210**
 Originally developed by YAHBALLON
 
-[![Native PS5 Build](https://github.com/kastroe/PS5GBCX/actions/workflows/build-gbcxy.yml/badge.svg)](https://github.com/kastroe/PS5GBCX/actions/workflows/build-gbcxy.yml)
-[![GitHub releases](https://img.shields.io/github/v/release/kastroe/PS5GBCX?style=flat-square)](https://github.com/kastroe/PS5GBCX/releases)
+[![GitHub releases](https://img.shields.io/github/v/release/kastroe/PS5GBCX?style=flat-square)](https://github.com/kastroe/GBCXY-Releases/releases)
 
 </div>
 
@@ -53,7 +52,7 @@ Game Boy artwork will not be incorrectly selected from the Game Boy Color librar
 
 ## Installation / updating
 
-1. The production workflow assembles **`GBCXY-v2.1.0-by-Kastroe.zip`** with the complete `PPSA99210` payload and required notices. The user-confirmed tested fix package is the basis for these v2.1.0 notes; the production ZIP SHA-256 is 10eccb33fbf171192f9a2ed7daaa9690905b4debce86c4d429df1f86809901fd. A GitHub source-code ZIP is **not** an installable PS5 build.
+1. The production release asset is **`GBCXY-v2.1.0-by-Kastroe-FINAL-RC.zip`** with the complete `PPSA99210` payload and required notices. The exact FINAL-RC production artifact was tested on PS5 hardware before publication. Its SHA-256 is 10eccb33fbf171192f9a2ed7daaa9690905b4debce86c4d429df1f86809901fd. A GitHub source-code ZIP is **not** an installable PS5 build.
 2. Extract the **complete `PPSA99210` folder**, retaining `eboot.bin`, `sce_sys`, `sce_module` and the packaged helper.
 3. Copy it to a supported PS5 homebrew install folder, commonly `/data/homebrew/PPSA99210/`, and start **GBCXY** from your jailbroken PS5.
 
@@ -126,7 +125,7 @@ not in this repository. Existing cached covers are never required for a source b
 
 ## Source layout and builds
 
-The [**GBCXY Native Build & Release**](.github/workflows/build-gbcxy.yml) workflow performs automated source/box-art/controller regression tests and assembles a native signed PS5 package from source. Package hashes are published only with the corresponding final artifact; version metadata is maintained in `app.json` and `gbc/src/gbcxy_build_version.h`.
+The the native build workflow workflow performs automated source/box-art/controller regression tests and assembles a native signed PS5 package from source. The corresponding-source archive and complete notices are attached to the [v2.1.0 release](https://github.com/kastroe/GBCXY-Releases/releases/tag/v2.1.0); source commit: `380035e314bd7e30f793883a24b23e1b5db996f2`. Package hashes are published with the final artifact; version metadata is maintained in `app.json` and `gbc/src/gbcxy_build_version.h`.
 
 ```text
 gbc/src/                   GB/GBC/GBA core wrapper, emulator and Chromatic Pocket animation
