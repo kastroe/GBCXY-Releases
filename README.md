@@ -1,33 +1,85 @@
-# 🎮 GBCXY — Game Boy, Game Boy Color & Game Boy Advance for PS5
+<div align="center">
+
+<img src="./neon_gbcxy_retro_console_icon.png" alt="GBCXY retro console icon" width="130">
+
+# GBCXY
 
 ### 8-Bit Colours. Next-Gen CoverFlow.
 
-**GBCXY v2.1.1 by Kastroe**  
-*Originally developed by YAHBALLON*
+**Game Boy · Game Boy Color · Game Boy Advance · PlayStation 5**
 
-Bring your Game Boy, Game Boy Color and Game Boy Advance collection to your homebrew-enabled PlayStation 5.
+[![Release](https://img.shields.io/github/v/release/kastroe/GBCXY-Releases?style=for-the-badge&label=Release&color=7C3AED)](https://github.com/kastroe/GBCXY-Releases/releases/latest)
+![PS5](https://img.shields.io/badge/Platform-PS5-1765CC?style=for-the-badge)
+![Core](https://img.shields.io/badge/Core-mGBA%200.10.5-268A65?style=for-the-badge)
+![Homebrew](https://img.shields.io/badge/Project-Homebrew-444?style=for-the-badge)
 
-Powered by **mGBA 0.10.5**, GBCXY features an animated 3D CoverFlow interface, artwork scraping, save states, custom controls and NAS/NFS game loading.
+**Version 2.1.1 by Kastroe** · *Originally developed by YAHBALLON*
 
-**[⬇ Download GBCXY v2.1.1](https://github.com/kastroe/GBCXY-Releases/releases/tag/v2.1.1)**
+Turn your handheld collection into a cartridge-style library on your homebrew-enabled PS5. Native emulation, animated **3D CoverFlow**, cover artwork, save states, themes, and local or NAS-hosted ROMs.
+
+### [⬇ Download GBCXY v2.1.1](https://github.com/kastroe/GBCXY-Releases/releases/download/v2.1.1/GBCXY-v2.1.1-STARTUP-FIX-PS5-TEST.zip) · [📋 Release notes](https://github.com/kastroe/GBCXY-Releases/releases/tag/v2.1.1) · [💬 Get support](https://github.com/kastroe/GBCXY-Releases/discussions)
+
+</div>
 
 ---
 
-## ✨ Features
+## 📸 Screenshots
 
-| Feature | Description |
+<div align="center">
+
+### The CoverFlow library
+
+<img src="./gbcxy-library.png" alt="GBCXY cartridge-style CoverFlow library on PS5" width="900">
+
+*Browse your collection with animated cartridge artwork and favourites.*
+
+<table>
+<tr>
+<td align="center" width="50%">
+<img src="./gbcxy-settings.png" alt="GBCXY settings and customisation" width="440"><br>
+<b>Settings & customisation</b>
+</td>
+<td align="center" width="50%">
+<img src="./gb-tetris.png" alt="Game Boy gameplay in GBCXY" width="440"><br>
+<b>Game Boy gameplay</b>
+</td>
+</tr>
+</table>
+
+<sub>Screenshots are from earlier builds and may differ slightly from the latest interface.</sub>
+
+</div>
+
+---
+
+## ⚡ Quick start
+
+1. **[Download v2.1.1](https://github.com/kastroe/GBCXY-Releases/releases/download/v2.1.1/GBCXY-v2.1.1-STARTUP-FIX-PS5-TEST.zip)** and extract the ZIP.
+2. Copy the full `PPSA99210` directory to `/data/homebrew/PPSA99210/` on your PS5.
+3. Put your legally obtained `.gb`, `.gbc`, `.gba` or supported `.zip` files in `/data/PS5GBC/games/`.
+4. Launch GBCXY and let the library scan finish. Configure additional folders under **Settings → Game directories**.
+
+> [!IMPORTANT]
+> **Upgrading? Keep `/data/PS5GBC/` intact.** It holds games, saves, states, artwork, settings and caches. Do not delete it when replacing the application.
+
+**Jump to:** [Install](#-1-installing-gbcxy-on-ps5) · [Add games](#-2-adding-games-to-your-ps5) · [NAS/NFS](#-3-connecting-gbcxy-to-a-nas-using-nfs) · [USB](#-4-loading-games-from-usb) · [Troubleshooting](#️-5-troubleshooting--games-not-appearing) · [Controls](#-6-dualsense-controls) · [Themes](#-7-themes-and-artwork) · [Data folders](#-8-save-data-and-folder-reference)
+
+---
+
+## ✨ Highlights
+
+| | |
 |---|---|
-| 🎮 GB / GBC / GBA | Native emulation of all three handheld systems |
-| 🖼️ 3D CoverFlow | Animated cartridge-style game library |
-| 🌐 NAS / NFS | Load supported games directly from network storage |
-| 📂 PS5 internal storage | Store ROMs directly on your console |
-| 💽 USB support | Scan supported USB ROM locations |
-| 💾 Saves and states | Battery saves, RTC support and save states |
-| ⭐ Favourites | Organise your favourite games |
-| 🎨 Five themes | Customise the library appearance |
-| 🧩 Super Game Boy | Enhanced borders at 256×224 |
-| 🎛️ Custom controls | Remap DualSense buttons |
-| 🔍 Cover artwork | System-specific artwork matching and scraping |
+| 🎮 **Three handheld systems** | GB, GBC and GBA powered by mGBA 0.10.5 |
+| 🖼️ **3D CoverFlow** | Animated cartridge-style browsing and artwork caching |
+| 🌐 **NAS / NFS** | Browse ROMs on supported network storage |
+| 📂 **Local / USB folders** | Scan ROMs from PS5 storage and supported USB locations |
+| 💾 **Saves & states** | Battery saves, RTC support and quick save states |
+| ⭐ **Favourites** | Organise your go-to games |
+| 🎨 **Five themes** | Chromatic Shift, Pocket Forest, Berry Soda, Polar LCD, Retro Amber |
+| 🧩 **Super Game Boy** | Enhanced 256×224 borders |
+| 🎛️ **DualSense controls** | Remappable buttons and fast-forward |
+| 🔍 **Artwork scraper** | System-aware matching with local cache |
 
 ---
 
@@ -539,31 +591,19 @@ Keep backups of important save and state files before changing installations.
 
 ---
 
-# 📦 9. Release Information
+# 📦 9. Release information
 
-**Current public release:** GBCXY v2.1.0 by Kastroe
+| | |
+|---|---|
+| **Latest release** | **GBCXY v2.1.1 by Kastroe** |
+| **PS5 title ID** | `PPSA99210` |
+| **Installer ZIP** | [GBCXY-v2.1.1-STARTUP-FIX-PS5-TEST.zip](https://github.com/kastroe/GBCXY-Releases/releases/download/v2.1.1/GBCXY-v2.1.1-STARTUP-FIX-PS5-TEST.zip) |
+| **ZIP SHA-256** | `22a6d8c9ef824d1abd29248586fc134b83209cc7d6a3cb659f980086cba2ec46` |
+| **Release page** | [v2.1.1](https://github.com/kastroe/GBCXY-Releases/releases/tag/v2.1.1) |
 
-**Application Title ID:** `PPSA99210`
+Version 2.1.1 improves local game-directory detection and library caching. It was tested on PS5 hardware with local Pokémon ROM hacks and an NFS-hosted library.
 
-**Production ZIP:**
-
-`GBCXY-v2.1.0-by-Kastroe-FINAL-RC.zip`
-
-**Verified production SHA-256:**
-
-```text
-10eccb33fbf171192f9a2ed7daaa9690905b4debce86c4d429df1f86809901fd
-```
-
-**Corresponding source commit:**
-
-```text
-380035e314bd7e30f793883a24b23e1b5db996f2
-```
-
-The release includes a corresponding-source archive and `SHA256SUMS.txt`.
-
-Version 2.1.0 includes GBA support, Super Game Boy 256×224 border rendering, improved frontend compatibility and fixes for cartridge save persistence, including Mario Kart: Super Circuit.
+**Previous version:** [v2.1.0](https://github.com/kastroe/GBCXY-Releases/releases/tag/v2.1.0) includes a corresponding-source archive and earlier checksums. Do not use those earlier hashes to validate the v2.1.1 package.
 
 ---
 
@@ -612,11 +652,12 @@ GBCXY is an independent community PS5 homebrew project. It is not affiliated wit
 
 ---
 
-## 🎮 Ready to revisit your handheld favourites?
+<div align="center">
 
-**[⬇ Download GBCXY v2.1.0 by Kastroe](https://github.com/kastroe/GBCXY-Releases/releases/tag/v2.1.0)**
+### 🎮 Your handheld collection, on PS5.
 
-**[💬 Community Support & Testing](https://github.com/kastroe/GBCXY-Releases/discussions)**
+**[⬇ Download v2.1.1](https://github.com/kastroe/GBCXY-Releases/releases/download/v2.1.1/GBCXY-v2.1.1-STARTUP-FIX-PS5-TEST.zip)** · **[💬 Support & testing](https://github.com/kastroe/GBCXY-Releases/discussions)**
 
-*Made for the PS5 homebrew community.*  
 *Developed by Kastroe · Originally created by YAHBALLON*
+
+</div>
