@@ -2,14 +2,14 @@
 
 ### 8-Bit Colours. Next-Gen CoverFlow.
 
-**GBCXY v2.1.0 by Kastroe**  
+**GBCXY v2.1.1 by Kastroe**  
 *Originally developed by YAHBALLON*
 
 Bring your Game Boy, Game Boy Color and Game Boy Advance collection to your homebrew-enabled PlayStation 5.
 
 Powered by **mGBA 0.10.5**, GBCXY features an animated 3D CoverFlow interface, artwork scraping, save states, custom controls and NAS/NFS game loading.
 
-**[⬇ Download GBCXY v2.1.0](https://github.com/kastroe/GBCXY-Releases/releases/tag/v2.1.0)**
+**[⬇ Download GBCXY v2.1.1](https://github.com/kastroe/GBCXY-Releases/releases/tag/v2.1.1)**
 
 ---
 
@@ -37,7 +37,7 @@ Powered by **mGBA 0.10.5**, GBCXY features an animated 3D CoverFlow interface, a
 
 Download the official release package:
 
-**[GBCXY-v2.1.0-by-Kastroe-FINAL-RC.zip](https://github.com/kastroe/GBCXY-Releases/releases/download/v2.1.0/GBCXY-v2.1.0-by-Kastroe-FINAL-RC.zip)**
+**[GBCXY-v2.1.1-STARTUP-FIX-PS5-TEST.zip](https://github.com/kastroe/GBCXY-Releases/releases/download/v2.1.1/GBCXY-v2.1.1-STARTUP-FIX-PS5-TEST.zip)**
 
 This is the installable homebrew package.
 
@@ -347,7 +347,7 @@ If a connection fails, verify the NAS IP, NFS export path, client permissions an
 
 # 💽 4. Loading Games From USB
 
-GBCXY v2.1.0 supports its predefined USB scanning locations.
+GBCXY v2.1.1 supports predefined USB scanning locations and configurable additional game directories.
 
 One example is:
 
@@ -365,13 +365,19 @@ To use this layout:
 
 USB mount paths vary by device and homebrew environment, so check the actual mounted path.
 
-**Note:** Manually adding arbitrary extra local or USB scan directories through the Game Directories settings is a v2.1.1 development feature and is not part of these v2.1.0 instructions.
+**Note:** In v2.1.1, additional local game folders can be configured in **Settings → Game directories**. Verify that the folder exists, that it contains supported ROMs, and that recursive scanning is enabled when using subfolders.
 
 ---
 
 # 🛠️ 5. Troubleshooting — Games Not Appearing
 
 If your ROMs aren't showing in GBCXY, try these checks.
+
+### Before reporting missing games
+
+On v2.1.1, open **Settings → Game directories** and confirm that the listed local folders match where you uploaded your ROMs. The standard folder is `/data/PS5GBC/games/`; added folders must point to real directories on the PS5. Check whether recursive scanning is enabled if ROMs are inside subfolders, then request a library refresh.
+
+If games still do not appear, include the exact GBCXY version, how you installed it, the full paths of your ROM folders, screenshots of the Game directories settings, and relevant scanner logs from `/data/PS5GBC/logs/`. Do not clear caches or delete saves as an initial troubleshooting step.
 
 ### Check the correct internal folder
 
