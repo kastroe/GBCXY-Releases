@@ -17,7 +17,7 @@
 
 Turn your handheld collection into a cartridge-style library on your homebrew-enabled PS5. Native emulation, animated **3D CoverFlow**, cover artwork, save states, themes, and local or NAS-hosted ROMs.
 
-### [⬇ Download GBCXY v2.1.1](https://github.com/kastroe/GBCXY-Releases/releases/download/v2.1.1/GBCXY-v2.1.1-STARTUP-FIX-PS5-TEST.zip) · [📋 Release notes](https://github.com/kastroe/GBCXY-Releases/releases/tag/v2.1.1) · [💬 Get support](https://github.com/kastroe/GBCXY-Releases/discussions)
+### [⬇ Download GBCXY v2.1.1](https://github.com/kastroe/GBCXY-Releases/releases/download/v2.1.1/GBCXY-v2.1.1.zip) · [📋 Release notes](https://github.com/kastroe/GBCXY-Releases/releases/tag/v2.1.1) · [💬 Get support](https://github.com/kastroe/GBCXY-Releases/discussions)
 
 </div>
 
@@ -54,7 +54,7 @@ Turn your handheld collection into a cartridge-style library on your homebrew-en
 
 ## ⚡ Quick start
 
-1. **[Download v2.1.1](https://github.com/kastroe/GBCXY-Releases/releases/download/v2.1.1/GBCXY-v2.1.1-STARTUP-FIX-PS5-TEST.zip)** and extract the ZIP.
+1. **[Download v2.1.1](https://github.com/kastroe/GBCXY-Releases/releases/download/v2.1.1/GBCXY-v2.1.1.zip)** and extract the ZIP.
 2. Copy the full `PPSA99210` directory to `/data/homebrew/PPSA99210/` on your PS5.
 3. Put your legally obtained `.gb`, `.gbc`, `.gba` or supported `.zip` files in `/data/PS5GBC/games/`.
 4. Launch GBCXY and let the library scan finish. Configure additional folders under **Settings → Game directories**.
@@ -89,7 +89,7 @@ Turn your handheld collection into a cartridge-style library on your homebrew-en
 
 Download the official release package:
 
-**[GBCXY-v2.1.1-STARTUP-FIX-PS5-TEST.zip](https://github.com/kastroe/GBCXY-Releases/releases/download/v2.1.1/GBCXY-v2.1.1-STARTUP-FIX-PS5-TEST.zip)**
+**[GBCXY-v2.1.1.zip](https://github.com/kastroe/GBCXY-Releases/releases/download/v2.1.1/GBCXY-v2.1.1.zip)**
 
 This is the installable homebrew package.
 
@@ -629,7 +629,7 @@ Keep backups of important save and state files before changing installations.
 |---|---|
 | **Latest release** | **GBCXY v2.1.1 by Kastroe** |
 | **PS5 title ID** | `PPSA99210` |
-| **Installer ZIP** | [GBCXY-v2.1.1-STARTUP-FIX-PS5-TEST.zip](https://github.com/kastroe/GBCXY-Releases/releases/download/v2.1.1/GBCXY-v2.1.1-STARTUP-FIX-PS5-TEST.zip) |
+| **Installer ZIP** | [GBCXY-v2.1.1.zip](https://github.com/kastroe/GBCXY-Releases/releases/download/v2.1.1/GBCXY-v2.1.1.zip) |
 | **ZIP SHA-256** | `22a6d8c9ef824d1abd29248586fc134b83209cc7d6a3cb659f980086cba2ec46` |
 | **Release page** | [v2.1.1](https://github.com/kastroe/GBCXY-Releases/releases/tag/v2.1.1) |
 
@@ -688,7 +688,7 @@ GBCXY is an independent community PS5 homebrew project. It is not affiliated wit
 
 ### 🎮 Your handheld collection, on PS5.
 
-**[⬇ Download v2.1.1](https://github.com/kastroe/GBCXY-Releases/releases/download/v2.1.1/GBCXY-v2.1.1-STARTUP-FIX-PS5-TEST.zip)** · **[💬 Support & testing](https://github.com/kastroe/GBCXY-Releases/discussions)**
+**[⬇ Download v2.1.1](https://github.com/kastroe/GBCXY-Releases/releases/download/v2.1.1/GBCXY-v2.1.1.zip)** · **[💬 Support & testing](https://github.com/kastroe/GBCXY-Releases/discussions)**
 
 *Developed by Kastroe · Originally created by YAHBALLON*
 
