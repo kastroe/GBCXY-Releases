@@ -421,88 +421,120 @@ USB mount paths vary by device and homebrew environment, so check the actual mou
 
 ---
 
-# 🛠️ 5. Troubleshooting — Games Not Appearing
+# 🛠️ 5. Troubleshooting & Reporting Problems
 
-If your ROMs aren't showing in GBCXY, try these checks.
+> [!IMPORTANT]
+> **Check your installation before assuming the emulator is broken.** ROMs not appearing can be caused by incorrect transfer paths, missing files, game-directory settings, a scan that hasn't finished, NAS permissions, or a filtering option. **Do not delete `/data/PS5GBC/`, saves, artwork or library caches while troubleshooting.**
 
-### Before reporting missing games
+## A. GBCXY does not launch / crashes on startup
 
-On v2.1.1, open **Settings → Game directories** and confirm that the listed local folders match where you uploaded your ROMs. The standard folder is `/data/PS5GBC/games/`; added folders must point to real directories on the PS5. Check whether recursive scanning is enabled if ROMs are inside subfolders, then request a library refresh.
+1. Confirm you downloaded the **v2.1.1 PS5 application ZIP**, not a source-code archive.
+2. **Extract the ZIP** and transfer the **complete** `PPSA99210` folder, preserving its subfolders.
+3. Check that the executable actually exists at `/data/homebrew/PPSA99210/eboot.bin`; it should not be nested inside a second `PPSA99210` directory.
+4. Confirm you're launching it using a homebrew environment compatible with your PS5 setup.
+5. If upgrading, preserve `/data/PS5GBC/` and note whether the previous version still launched.
+6. If it still fails, capture the exact on-screen message or behaviour, when it happens, and any available logs.
 
-If games still do not appear, include the exact GBCXY version, how you installed it, the full paths of your ROM folders, screenshots of the Game directories settings, and relevant scanner logs from `/data/PS5GBC/logs/`. Do not clear caches or delete saves as an initial troubleshooting step.
+## B. Local ROMs are missing (including ROM hacks)
 
-### Check the correct internal folder
+**Default ROM folder:** `/data/PS5GBC/games/`  
+**Application install folder (not your ROM folder):** `/data/homebrew/PPSA99210/`
 
-The primary folder is:
+1. **Confirm the files actually exist on the PS5.** Open PS5Upload or PS5 Web File Manager and inspect the full path. Seeing files on your PC is not proof they were uploaded to the console.
+2. **Check the extensions.** Supported ROM extensions include `.gb`, `.gbc`, `.gba` and supported `.zip` archives. For diagnosis, use one known-working, uncompressed ROM of your own directly under `/data/PS5GBC/games/`.
+3. **Open Settings → Game directories.** Verify that the primary local folder and any custom folders match the actual PS5 paths **character for character**. A directory name alone isn't enough: it must be the real full path.
+4. **Check recursive scanning.** If your games are in subfolders, enable the recursive option for that directory.
+5. **Refresh the library** and give the scan time to complete. For a large NAS collection, the initial scan may take longer.
+6. **Clear search and check filters/collections.** A game may be present but hidden from the currently selected view.
+7. **Try a second small test folder** if needed, containing just one uncompressed ROM. Add the exact folder path under Game directories and refresh.
+8. If the test ROM works but the other files do not, report examples of **filenames and extensions** (not ROM contents), whether files are zipped, and whether this affects GB, GBC or GBA.
 
-```text
-/data/PS5GBC/games/
-```
+**For custom folders:** share screenshots of both the PS5 file manager showing the actual directory and the GBCXY **Game directories** screen. These two screenshots often reveal a path mismatch immediately.
 
-Not:
+**For ROM hacks:** the fact that a file is a Pokémon hack does not automatically explain a missing library entry. First determine whether GBCXY can enumerate that directory and whether ordinary ROMs alongside it appear.
 
-```text
-/data/homebrew/PPSA99210/games/
-```
+## C. NAS / NFS games are missing or scanning is slow
 
-### Check the file extensions
+1. Confirm the **NAS is online** and reachable on your network.
+2. Check that **NFS is enabled**, the ROM directory is **exported**, and your PS5 is permitted to access that export.
+3. Use your NAS's **actual export path**, not just its friendly shared-folder name.
+4. Recheck your configured `nfs://` address or entries in `/data/PS5GBC/nfs.txt`. Ordinary Windows `\\NAS\Share` paths are **not** NFS URLs.
+5. Confirm that the export allows reading files and traversing directories, including subfolders.
+6. Restart GBCXY after changing NFS configuration, then allow the initial scan to finish before judging performance.
+7. If the initial scan is unusually slow, record the **number of games, approximate scan duration, NAS model, whether ROMs are compressed, and whether the slowdown happens on every cold start or only the first one**.
+8. Do **not** clear the NAS library cache just to test an NFS problem. A repeat full scan can make diagnosis harder.
 
-Supported extensions include `.gb`, `.gbc`, `.gba` and supported `.zip` archives.
+**Privacy:** when reporting NFS configuration, you may redact private IP addresses and share names. Keep the URL structure visible so the setup can still be assessed.
 
-For troubleshooting, try an uncompressed ROM directly in the primary games folder.
+## D. Games appear, but covers, favourites or saves are wrong
 
-### Check whether the files are inside subfolders
+- **Covers missing or incorrect:** check the filename, artwork settings and whether a scrape has completed. Report the title and system (GB/GBC/GBA); include a screenshot of the incorrect or missing cover.
+- **Favourites or search appear wrong:** clear any active search/filter, restart once and note if the issue persists. Include a screenshot of the selected row or collection.
+- **Save data or save states missing:** stop before deleting anything. Check whether you're still using the same `/data/PS5GBC/` data folder and provide the game name, save type (battery save or save state) and what happened before it went missing.
+- **Freezes or crashes while launching a game:** record the game/system, whether it is a compressed ROM or hack, the exact step that fails, and whether another known-working ROM launches.
 
-For an initial test, avoid nesting ROMs inside several folders.
+## E. Where to find logs
 
-Place a supported ROM directly inside `/data/PS5GBC/games/`.
-
-### Refresh the library
-
-Use the supported library refresh/rescan workflow or restart GBCXY.
-
-Make sure the scan has completed before deciding that the files are missing.
-
-### Check library search and filters
-
-If games are present but hidden by a search or collection filter, clear the search and check the appropriate system collection.
-
-### Check NFS connections
-
-If you're loading games from a NAS, verify the share is accessible from the PS5.
-
-Changing the NFS refresh interval does not fix an incorrect local ROM directory.
-
-### Check available log files
-
-GBCXY stores logs under:
+Open your PS5 file manager and look under:
 
 ```text
 /data/PS5GBC/logs/
 ```
 
-Depending on the build and enabled logging, you may find:
+Depending on the build and enabled logging, files may include `boot.log` and `settings.log`. If other relevant logs exist, include those as well.
+
+**Upload the actual text log files where possible**, not just a screenshot of a few lines. If a log is empty or missing, say so and provide its filename, file size and modification time. Do not invent logs or assume an empty file explains the fault.
+
+Before sharing, remove passwords, tokens, credentials and personally identifying information. Redact internal IP addresses if you prefer.
+
+## F. Exactly what to send when requesting help
+
+Copy this template into a new post in **[GBCXY GitHub Discussions](https://github.com/kastroe/GBCXY-Releases/discussions)**, together with the relevant screenshots and log files.
 
 ```text
-boot.log
-settings.log
+GBCXY BUG / SUPPORT REPORT
+
+1. GBCXY version:
+   (Example: v2.1.1; include ZIP filename if known)
+
+2. PS5 environment:
+   (Firmware and homebrew/loader setup, if comfortable sharing)
+
+3. Installation method:
+   (Tool used to transfer/install GBCXY)
+   Application folder on PS5:
+
+4. Problem:
+   (What exactly happens? What did you expect instead?)
+
+5. When it happens:
+   (Startup / folder scan / refresh / launching a game / saving / other)
+
+6. ROM location(s):
+   (Exact local folders or redacted NFS URL/export structure)
+   File extensions involved:
+   Number of ROMs expected:
+   Number actually visible:
+   Recursive scanning on/off:
+
+7. What you've already tried:
+   (List steps and results; don't just say "nothing works")
+
+8. Evidence attached:
+   [ ] Screenshot: GBCXY Game directories settings
+   [ ] Screenshot: PS5 file manager showing real ROM paths
+   [ ] Screenshot/video: error or unexpected behaviour
+   [ ] Log files from /data/PS5GBC/logs/
+   [ ] Scan duration / counts, if scan-related
+
+9. Other details:
+   (Was this working in an earlier version? Is the issue repeatable?)
 ```
 
-Use PS5Upload or PS5 Web File Manager to inspect or download them.
+> [!TIP]
+> **Best evidence for missing games:** one screenshot showing where the ROM files really are, one showing GBCXY's configured game folders, plus the latest available scanner/boot logs. That lets the developer compare the installation and the configuration before changing the code.
 
-If `boot.log` is empty, report that along with its file size and modification date. An empty log alone does not establish why ROM scanning failed.
-
-### Report a problem
-
-For ROM detection issues, visit:
-
-**[GBCXY GitHub Discussions](https://github.com/kastroe/GBCXY-Releases/discussions)**
-
-Include the version you're using, the ROM directory, the number of games, their file extensions and any available diagnostic logs.
-
-Remove private network addresses, usernames, credentials and other sensitive information before uploading logs.
-
-**Do not upload ROMs, BIOS files or copyrighted game data.**
+**Do not post ROM files, BIOS files, copyrighted game data, or credentials.** If logs contain sensitive details, redact those before sharing.
 
 ---
 
