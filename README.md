@@ -473,19 +473,26 @@ USB mount paths vary by device and homebrew environment, so check the actual mou
 - **Save data or save states missing:** stop before deleting anything. Check whether you're still using the same `/data/PS5GBC/` data folder and provide the game name, save type (battery save or save state) and what happened before it went missing.
 - **Freezes or crashes while launching a game:** record the game/system, whether it is a compressed ROM or hack, the exact step that fails, and whether another known-working ROM launches.
 
-## E. Where to find logs
+## E. 🚨 IMPORTANT — Capture a fresh boot.log
 
-Open your PS5 file manager and look under:
+> [!IMPORTANT]
+> **READ THIS BEFORE REPORTING MISSING GAMES OR STARTUP PROBLEMS.** Kastroe needs a **fresh boot.log from the initial library scan**, not an old log full of repeated refreshes.
+>
+> **DO NOT DELETE `/data/PS5GBC/` — EVER FOR TROUBLESHOOTING.** It contains your ROMs, saves, save states, settings, artwork and library caches.
 
-```text
-/data/PS5GBC/logs/
-```
+### Follow these steps in order
 
-Depending on the build and enabled logging, files may include `boot.log` and `settings.log`. If other relevant logs exist, include those as well.
+1. **Close GBCXY completely.**
+2. Using PS5Upload or PS5 Web File Manager, **delete only the installed GBCXY application folder**, normally `/data/homebrew/PPSA99210/`. Verify the install location first if your launcher uses a different directory.
+3. **Reinstall the latest GBCXY release:** extract the ZIP and copy the complete `PPSA99210` folder to the PS5 application location.
+4. **Launch GBCXY and wait for the library to finish loading, if it does.** If the library never loads, the app freezes, or it crashes, note when and how it failed.
+5. **After that attempt**, download the actual log file from `/data/PS5GBC/logs/boot.log` to your computer.
+6. **Send the boot.log to Kastroe** through [GitHub Discussions](https://github.com/kastroe/GBCXY-Releases/discussions), along with your GBCXY version, installation method, exact game-folder paths, screenshot of **Settings → Game directories**, and what happened.
 
-**Upload the actual text log files where possible**, not just a screenshot of a few lines. If a log is empty or missing, say so and provide its filename, file size and modification time. Do not invent logs or assume an empty file explains the fault.
+If `boot.log` is missing, empty or not from this launch, state its file size and modification time. If reinstalling isn't practical, a log from a normal fresh start is still helpful—just say it wasn't reinstalled. Other files under `/data/PS5GBC/logs/`, such as `settings.log`, may also help.
 
-Before sharing, remove passwords, tokens, credentials and personally identifying information. Redact internal IP addresses if you prefer.
+> [!WARNING]
+> **DO NOT delete `/data/PS5GBC/`, your ROMs, save files, artwork or library cache to capture a log.** Redact passwords, credentials and private information before sharing.
 
 ## F. Exactly what to send when requesting help
 
